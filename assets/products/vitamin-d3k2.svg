@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#000"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="50%" stop-color="#111"/>
+      <stop offset="100%" stop-color="#0d0d0d"/>
+    </linearGradient>
+    <linearGradient id="cap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#333"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgba(255,255,255,0)"/>
+      <stop offset="40%" stop-color="rgba(255,255,255,0.06)"/>
+      <stop offset="50%" stop-color="rgba(255,255,255,0.1)"/>
+      <stop offset="60%" stop-color="rgba(255,255,255,0.06)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgba(255,255,255,0)"/>
+      <stop offset="50%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <ellipse cx="200" cy="460" rx="90" ry="12" fill="rgba(255,255,255,0.02)"/>
+  <!-- Bottle body -->
+  <rect x="145" y="160" width="110" height="240" rx="16" fill="url(#body)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <rect x="145" y="160" width="110" height="240" rx="16" fill="url(#shine)"/>
+  <!-- Neck -->
+  <rect x="175" y="120" width="50" height="50" rx="4" fill="url(#body)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <!-- Cap -->
+  <rect x="170" y="95" width="60" height="35" rx="6" fill="url(#cap)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <!-- Accent line -->
+  <rect x="158" y="220" width="84" height="2" fill="url(#accent)" opacity="0.8" filter="url(#glow)"/>
+  <!-- Brand -->
+  <text x="200" y="268" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="22" fill="#C9C9C9" letter-spacing="6">PRIME</text>
+  <!-- Name -->
+  <text x="200" y="298" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="300" font-size="14" fill="white" letter-spacing="5">D3 + K2</text>
+  <!-- Accent line bottom -->
+  <rect x="158" y="312" width="84" height="1" fill="url(#accent)" opacity="0.5"/>
+  <!-- Subtitle -->
+  <text x="200" y="335" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="7" fill="rgba(255,255,255,0.4)" letter-spacing="2">IMMUNE SUPPORT · 120 CAPS</text>
+  <!-- Brand line -->
+  <text x="200" y="375" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="300" font-size="6" fill="rgba(255,255,255,0.2)" letter-spacing="2">PRIME PERFORMANCE GROUP</text>
+  <line x1="146" y1="175" x2="146" y2="385" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+</svg>

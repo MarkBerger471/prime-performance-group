@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Prime Performance Group</title>
+    <meta name="description" content="Science-backed articles on training, nutrition, and supplementation from Prime Performance Group.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{ppg:{black:'#000000',dark:'#0a0a0a',card:'#111111',silver:'#C9C9C9',muted:'#8A8A8A',white:'#FFFFFF',accent:'#a78bfa'}}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="noise">
+
+    <!-- NAV -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex-shrink-0"><img src="assets/logo.png" alt="Prime Performance Group" class="h-10 w-auto"></a>
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="index.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Home</a>
+                    <a href="about.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">About</a>
+                    <a href="story.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Our Story</a>
+                    <a href="shop.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Shop</a>
+                    <a href="blog.html" class="nav-link-active text-sm font-medium tracking-wider uppercase">Blog</a>
+                    <a href="community.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Community</a>
+                    <a href="contact.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Contact</a>
+                </div>
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="shop.html" class="btn-solid px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide">Shop Now</a>
+                </div>
+                <button id="menu-toggle" class="lg:hidden p-2 text-white" aria-label="Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                        <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="mobile-menu fixed inset-0 top-20 bg-black/95 backdrop-blur-xl lg:hidden z-40">
+            <div class="flex flex-col items-center justify-center h-full gap-8">
+                <a href="index.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link">Home</a>
+                <a href="about.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link">About</a>
+                <a href="story.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link">Our Story</a>
+                <a href="shop.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link">Shop</a>
+                <a href="blog.html" class="text-2xl font-light tracking-widest uppercase text-white mobile-link">Blog</a>
+                <a href="community.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link">Community</a>
+                <a href="contact.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header relative overflow-hidden">
+        <div class="orb orb-1 -top-40 left-10 animate-float"></div>
+        <div class="orb orb-2 bottom-0 right-20 animate-float-slow"></div>
+        <div class="absolute inset-0 grid-pattern opacity-30"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <p class="text-sm tracking-[0.3em] uppercase text-ppg-muted mb-4 font-medium animate-fade-in" style="animation-delay:0.2s;animation-fill-mode:both;">Blog</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] animate-slide-up" style="animation-delay:0.4s;animation-fill-mode:both;">
+                Fuel Your <span class="text-shimmer">Knowledge</span>
+            </h1>
+            <p class="text-ppg-silver/70 text-lg max-w-2xl mx-auto mt-8 leading-relaxed animate-slide-up" style="animation-delay:0.6s;animation-fill-mode:both;">
+                Science-backed articles on training, nutrition, and supplementation — written by athletes, for athletes.
+            </p>
+        </div>
+    </section>
+
+    <!-- BLOG CONTENT -->
+    <section class="relative py-16 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+            <!-- Category tabs -->
+            <div class="flex flex-wrap gap-3 mb-12 reveal">
+                <button class="px-5 py-2 rounded-full text-sm font-medium bg-white text-black transition-all">All</button>
+                <button class="px-5 py-2 rounded-full text-sm font-medium glass text-white/70 hover:text-white hover:bg-white/10 transition-all">Nutrition</button>
+                <button class="px-5 py-2 rounded-full text-sm font-medium glass text-white/70 hover:text-white hover:bg-white/10 transition-all">Training</button>
+                <button class="px-5 py-2 rounded-full text-sm font-medium glass text-white/70 hover:text-white hover:bg-white/10 transition-all">Science</button>
+                <button class="px-5 py-2 rounded-full text-sm font-medium glass text-white/70 hover:text-white hover:bg-white/10 transition-all">Lifestyle</button>
+                <button class="px-5 py-2 rounded-full text-sm font-medium glass text-white/70 hover:text-white hover:bg-white/10 transition-all">Product Guides</button>
+            </div>
+
+            <!-- Featured Article -->
+            <div class="glass-card rounded-3xl overflow-hidden card-shine group mb-12 reveal">
+                <div class="grid md:grid-cols-2">
+                    <div class="aspect-video md:aspect-auto relative overflow-hidden min-h-[300px]">
+                        <img src="assets/blog/protein-timing.jpg" alt="Grilled protein meal with vegetables" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent"></div>
+                        <div class="absolute top-4 left-4 z-10">
+                            <span class="px-3 py-1 rounded-full text-[10px] tracking-wider uppercase font-medium glass text-white/80">Featured</span>
+                        </div>
+                    </div>
+                    <div class="p-8 md:p-12 flex flex-col justify-center">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="px-3 py-1 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60">Nutrition</span>
+                            <span class="text-ppg-muted text-xs">March 12, 2026</span>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-bold mb-4 group-hover:text-white/90 transition-colors">The Truth About Protein Timing: Does the Anabolic Window Actually Matter?</h2>
+                        <p class="text-ppg-silver/70 leading-relaxed mb-6">We break down the latest research on the anabolic window, meal timing, and what the evidence really says about when you should consume protein for maximum muscle growth.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-xs font-semibold text-white/60">PPG</div>
+                                <span class="text-ppg-muted text-sm">PPG Research Team &bull; 8 min read</span>
+                            </div>
+                            <a href="#" class="text-sm font-medium text-white/70 hover:text-white transition-colors inline-flex items-center gap-2">
+                                Read
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <article class="glass-card rounded-3xl overflow-hidden card-shine group reveal" style="transition-delay:0s;">
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="assets/blog/training-heat.jpg" alt="Gym with dumbbells and training equipment" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute top-4 left-4 z-10"><span class="px-3 py-1 rounded-full text-[10px] tracking-wider uppercase font-medium glass text-white/80">Training</span></div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-ppg-muted text-xs mb-3 tracking-wide">March 8, 2026 &bull; 7 min read</p>
+                        <h3 class="text-lg font-semibold mb-3 group-hover:text-white/90 transition-colors">Training in Thailand's Heat: Hydration & Supplementation Guide</h3>
+                        <p class="text-ppg-muted text-sm leading-relaxed mb-4">How to optimize performance and recovery when training in tropical climates year-round.</p>
+                        <a href="#" class="text-sm font-medium text-white/70 hover:text-white transition-colors inline-flex items-center gap-2">Read More <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                    </div>
+                </article>
+
+                <article class="glass-card rounded-3xl overflow-hidden card-shine group reveal" style="transition-delay:0.1s;">
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="assets/blog/stacking.jpg" alt="Supplement powder scoop" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute top-4 left-4 z-10"><span class="px-3 py-1 rounded-full text-[10px] tracking-wider uppercase font-medium glass text-white/80">Science</span></div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-ppg-muted text-xs mb-3 tracking-wide">March 1, 2026 &bull; 6 min read</p>
+                        <h3 class="text-lg font-semibold mb-3 group-hover:text-white/90 transition-colors">Creatine Monohydrate: Still the King of Supplements in 2026</h3>
+                        <p class="text-ppg-muted text-sm leading-relaxed mb-4">Why creatine remains the most researched and effective supplement — and why dosing matters more than you think.</p>
+                        <a href="#" class="text-sm font-medium text-white/70 hover:text-white transition-colors inline-flex items-center gap-2">Read More <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                    </div>
+                </article>
+
+                <article class="glass-card rounded-3xl overflow-hidden card-shine group reveal" style="transition-delay:0.2s;">
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="assets/blog/creatine.jpg" alt="Athlete performing barbell deadlift" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute top-4 left-4 z-10"><span class="px-3 py-1 rounded-full text-[10px] tracking-wider uppercase font-medium glass text-white/80">Product Guide</span></div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-ppg-muted text-xs mb-3 tracking-wide">February 22, 2026 &bull; 5 min read</p>
+                        <h3 class="text-lg font-semibold mb-3 group-hover:text-white/90 transition-colors">How to Stack PPG Products for Maximum Results</h3>
+                        <p class="text-ppg-muted text-sm leading-relaxed mb-4">A guide to combining our pre-workout, protein, and recovery formulas for optimal performance gains.</p>
+                        <a href="#" class="text-sm font-medium text-white/70 hover:text-white transition-colors inline-flex items-center gap-2">Read More <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                    </div>
+                </article>
+
+                <article class="glass-card rounded-3xl overflow-hidden card-shine group reveal" style="transition-delay:0.05s;">
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="assets/blog/morning-habits.jpg" alt="Athletes training with push-up bars" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute top-4 left-4 z-10"><span class="px-3 py-1 rounded-full text-[10px] tracking-wider uppercase font-medium glass text-white/80">Lifestyle</span></div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-ppg-muted text-xs mb-3 tracking-wide">February 15, 2026 &bull; 4 min read</p>
+                        <h3 class="text-lg font-semibold mb-3 group-hover:text-white/90 transition-colors">5 Morning Habits of High-Performance Athletes in Bangkok</h3>
+                        <p class="text-ppg-muted text-sm leading-relaxed mb-4">What elite athletes in Thailand do before 7 AM to set the tone for peak performance all day.</p>
+                        <a href="#" class="text-sm font-medium text-white/70 hover:text-white transition-colors inline-flex items-center gap-2">Read More <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                    </div>
+                </article>
+
+                <article class="glass-card rounded-3xl overflow-hidden card-shine group reveal" style="transition-delay:0.15s;">
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="assets/blog/labels.jpg" alt="Research and science" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute top-4 left-4 z-10"><span class="px-3 py-1 rounded-full text-[10px] tracking-wider uppercase font-medium glass text-white/80">Science</span></div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-ppg-muted text-xs mb-3 tracking-wide">February 8, 2026 &bull; 9 min read</p>
+                        <h3 class="text-lg font-semibold mb-3 group-hover:text-white/90 transition-colors">Understanding Proprietary Blends: What Brands Don't Want You to Know</h3>
+                        <p class="text-ppg-muted text-sm leading-relaxed mb-4">Why transparency matters, how to read supplement labels, and red flags to watch for.</p>
+                        <a href="#" class="text-sm font-medium text-white/70 hover:text-white transition-colors inline-flex items-center gap-2">Read More <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                    </div>
+                </article>
+
+                <article class="glass-card rounded-3xl overflow-hidden card-shine group reveal" style="transition-delay:0.25s;">
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="assets/blog/thai-food.jpg" alt="Thai street food spread" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute top-4 left-4 z-10"><span class="px-3 py-1 rounded-full text-[10px] tracking-wider uppercase font-medium glass text-white/80">Nutrition</span></div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-ppg-muted text-xs mb-3 tracking-wide">February 1, 2026 &bull; 6 min read</p>
+                        <h3 class="text-lg font-semibold mb-3 group-hover:text-white/90 transition-colors">Thai Street Food & Macros: A Fitness Lover's Guide</h3>
+                        <p class="text-ppg-muted text-sm leading-relaxed mb-4">How to navigate Thailand's incredible street food scene while hitting your macro targets.</p>
+                        <a href="#" class="text-sm font-medium text-white/70 hover:text-white transition-colors inline-flex items-center gap-2">Read More <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More -->
+            <div class="text-center mt-12 reveal">
+                <button class="btn-primary px-10 py-4 rounded-full text-sm font-semibold tracking-widest uppercase text-white">Load More Articles</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="relative py-32 overflow-hidden">
+        <div class="orb orb-1 top-0 left-1/2 -translate-x-1/2 opacity-20"></div>
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center reveal">
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Never Miss an <span class="text-shimmer">Article</span></h2>
+            <p class="text-ppg-silver/70 text-lg mb-10 max-w-xl mx-auto">Subscribe for weekly performance tips and the latest supplement science.</p>
+            <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" onsubmit="event.preventDefault();">
+                <input type="email" placeholder="Enter your email" class="glass-input flex-1 px-6 py-4 rounded-full text-sm text-white placeholder-white/30">
+                <button type="submit" class="btn-solid px-8 py-4 rounded-full text-sm font-semibold tracking-wide whitespace-nowrap">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-16">
+                <div class="col-span-2 md:col-span-4 lg:col-span-1 mb-4 lg:mb-0">
+                    <img src="assets/logo.png" alt="Prime Performance Group" class="h-8 w-auto mb-6 brightness-75">
+                    <p class="text-ppg-muted text-sm leading-relaxed max-w-xs">Premium, science-backed supplements crafted for the Thai market.</p>
+                </div>
+                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4">Shop</h4><ul class="space-y-3"><li><a href="shop.html" class="text-sm text-white/50 hover:text-white transition-colors">All Products</a></li></ul></div>
+                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4">Company</h4><ul class="space-y-3"><li><a href="about.html" class="text-sm text-white/50 hover:text-white transition-colors">About</a></li><li><a href="story.html" class="text-sm text-white/50 hover:text-white transition-colors">Our Story</a></li><li><a href="blog.html" class="text-sm text-white/50 hover:text-white transition-colors">Blog</a></li><li><a href="contact.html" class="text-sm text-white/50 hover:text-white transition-colors">Contact</a></li></ul></div>
+                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4">Support</h4><ul class="space-y-3"><li><a href="contact.html" class="text-sm text-white/50 hover:text-white transition-colors">FAQ</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Privacy</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Terms</a></li></ul></div>
+                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4">Connect</h4><ul class="space-y-3"><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Instagram</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Facebook</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">TikTok</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">LINE</a></li></ul></div>
+            </div>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-ppg-muted text-xs">&copy; 2026 Prime Performance Group. All rights reserved.</p>
+                <div class="flex items-center gap-6"><a href="#" class="text-ppg-muted text-xs hover:text-white transition-colors">Privacy</a><a href="#" class="text-ppg-muted text-xs hover:text-white transition-colors">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
