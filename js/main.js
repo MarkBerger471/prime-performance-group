@@ -94,30 +94,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ---- Smooth tilt on glass cards (desktop only, throttled with rAF) ----
-    if (window.matchMedia('(min-width: 768px)').matches) {
-        document.querySelectorAll('.glass-card').forEach(card => {
-            let tiltTicking = false;
-            card.addEventListener('mousemove', (e) => {
-                if (!tiltTicking) {
-                    requestAnimationFrame(() => {
-                        const rect = card.getBoundingClientRect();
-                        const x = e.clientX - rect.left;
-                        const y = e.clientY - rect.top;
-                        const centerX = rect.width / 2;
-                        const centerY = rect.height / 2;
-                        const rotateX = (y - centerY) / 25;
-                        const rotateY = (centerX - x) / 25;
-                        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px) translateZ(0)`;
-                        tiltTicking = false;
-                    });
-                    tiltTicking = true;
-                }
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = '';
-            });
-        });
-    }
-
 });
