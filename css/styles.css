@@ -4,7 +4,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Inter', 'Noto Sans Thai', system-ui, sans-serif;
     background: #000;
     color: #fff;
     overflow-x: hidden;
@@ -309,6 +309,10 @@ body {
     height: 1px;
     background: rgba(255,255,255,0.4);
 }
+
+/* ---- FOUC PREVENTION ---- */
+.lang-loading [data-i18n],
+.lang-loading [data-i18n-html] { visibility: hidden; }
 
 /* ---- REDUCE MOTION ---- */
 @media (prefers-reduced-motion: reduce) {

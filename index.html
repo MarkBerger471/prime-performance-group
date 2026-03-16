@@ -19,8 +19,9 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <script>if(localStorage.getItem("ppg-lang")==="th")document.documentElement.classList.add("lang-loading");</script>
 </head>
 <body class="noise">
 
@@ -32,20 +33,21 @@
                     <img src="assets/logo.png" alt="Prime Performance Group" class="h-10 w-auto">
                 </a>
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="index.html" class="nav-link-active text-sm font-medium tracking-wider uppercase">Home</a>
-                    <a href="about.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">About</a>
-                    <a href="story.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Our Story</a>
-                    <a href="shop.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Shop</a>
-                    <a href="blog.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Blog</a>
-                    <a href="community.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Community</a>
-                    <a href="contact.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Contact</a>
+                    <a href="index.html" class="nav-link-active text-sm font-medium tracking-wider uppercase" data-i18n="nav.home">Home</a>
+                    <a href="about.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase" data-i18n="nav.about">About</a>
+                    <a href="story.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase" data-i18n="nav.story">Our Story</a>
+                    <a href="shop.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase" data-i18n="nav.shop">Shop</a>
+                    <a href="blog.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase" data-i18n="nav.blog">Blog</a>
+                    <a href="community.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase" data-i18n="nav.community">Community</a>
+                    <a href="contact.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase" data-i18n="nav.contact">Contact</a>
                 </div>
                 <div class="hidden lg:flex items-center gap-4">
                     <button class="relative p-2 text-white/70 hover:text-white transition-colors">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
                         <span class="absolute -top-1 -right-1 w-4 h-4 bg-white text-black text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
                     </button>
-                    <a href="shop.html" class="btn-solid px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide">Shop Now</a>
+                    <a href="shop.html" class="btn-solid px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide" data-i18n="nav.shopNow">Shop Now</a>
+                    <button onclick="ppgI18n.toggleLang()" class="px-3 py-1.5 rounded-full text-xs font-semibold tracking-wider glass text-white/70 hover:text-white hover:bg-white/10 transition-all"><span class="lang-toggle-text">TH</span></button>
                 </div>
                 <button id="menu-toggle" class="lg:hidden p-2 text-white" aria-label="Menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -57,14 +59,15 @@
         </div>
         <div id="mobile-menu" class="mobile-menu fixed inset-0 top-20 bg-black/95 backdrop-blur-xl lg:hidden z-40">
             <div class="flex flex-col items-center justify-center h-full gap-8">
-                <a href="index.html" class="text-2xl font-light tracking-widest uppercase text-white mobile-link">Home</a>
-                <a href="about.html" class="text-2xl font-light tracking-widest uppercase text-white/80 hover:text-white transition-colors mobile-link">About</a>
-                <a href="story.html" class="text-2xl font-light tracking-widest uppercase text-white/80 hover:text-white transition-colors mobile-link">Our Story</a>
-                <a href="shop.html" class="text-2xl font-light tracking-widest uppercase text-white/80 hover:text-white transition-colors mobile-link">Shop</a>
-                <a href="blog.html" class="text-2xl font-light tracking-widest uppercase text-white/80 hover:text-white transition-colors mobile-link">Blog</a>
-                <a href="community.html" class="text-2xl font-light tracking-widest uppercase text-white/80 hover:text-white transition-colors mobile-link">Community</a>
-                <a href="contact.html" class="text-2xl font-light tracking-widest uppercase text-white/80 hover:text-white transition-colors mobile-link">Contact</a>
-                <a href="shop.html" class="btn-solid px-10 py-3 rounded-full text-sm font-semibold tracking-widest uppercase mt-4">Shop Now</a>
+                <a href="index.html" class="text-2xl font-light tracking-widest uppercase text-white mobile-link" data-i18n="nav.home">Home</a>
+                <a href="about.html" class="text-2xl font-light tracking-widest uppercase text-white/80 hover:text-white transition-colors mobile-link" data-i18n="nav.about">About</a>
+                <a href="story.html" class="text-2xl font-light tracking-widest uppercase text-white/80 hover:text-white transition-colors mobile-link" data-i18n="nav.story">Our Story</a>
+                <a href="shop.html" class="text-2xl font-light tracking-widest uppercase text-white/80 hover:text-white transition-colors mobile-link" data-i18n="nav.shop">Shop</a>
+                <a href="blog.html" class="text-2xl font-light tracking-widest uppercase text-white/80 hover:text-white transition-colors mobile-link" data-i18n="nav.blog">Blog</a>
+                <a href="community.html" class="text-2xl font-light tracking-widest uppercase text-white/80 hover:text-white transition-colors mobile-link" data-i18n="nav.community">Community</a>
+                <a href="contact.html" class="text-2xl font-light tracking-widest uppercase text-white/80 hover:text-white transition-colors mobile-link" data-i18n="nav.contact">Contact</a>
+                <a href="shop.html" class="btn-solid px-10 py-3 rounded-full text-sm font-semibold tracking-widest uppercase mt-4" data-i18n="nav.shopNow">Shop Now</a>
+                <button onclick="ppgI18n.toggleLang()" class="px-6 py-2 rounded-full text-sm font-semibold tracking-widest glass text-white/70 hover:text-white hover:bg-white/10 transition-all mt-2"><span class="lang-toggle-text">TH</span></button>
             </div>
         </div>
     </nav>
@@ -80,20 +83,20 @@
 
         <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
             <div class="animate-fade-in" style="animation-delay: 0.2s; animation-fill-mode: both;">
-                <p class="text-sm md:text-base tracking-[0.3em] uppercase text-ppg-muted mb-6 font-medium">Premium Supplements — Bangkok, Thailand</p>
+                <p class="text-sm md:text-base tracking-[0.3em] uppercase text-ppg-muted mb-6 font-medium" data-i18n="home.hero.tagline">Premium Supplements — Bangkok, Thailand</p>
             </div>
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-8 animate-slide-up" style="animation-delay: 0.4s; animation-fill-mode: both;">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-8 animate-slide-up" style="animation-delay: 0.4s; animation-fill-mode: both;" data-i18n-html="home.hero.title">
                 <span class="text-shimmer">Elevate Your</span><br>
                 <span class="text-white">Performance</span>
             </h1>
             <div class="animate-slide-up" style="animation-delay: 0.7s; animation-fill-mode: both;">
-                <p class="text-lg md:text-xl text-ppg-silver/80 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                <p class="text-lg md:text-xl text-ppg-silver/80 max-w-2xl mx-auto mb-10 font-light leading-relaxed" data-i18n="home.hero.subtitle">
                     Science-backed formulations. Western quality standards. Crafted for those who demand more from themselves and their supplements.
                 </p>
             </div>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style="animation-delay: 1s; animation-fill-mode: both;">
-                <a href="shop.html" class="btn-solid px-10 py-4 rounded-full text-sm font-semibold tracking-widest uppercase">Explore Products</a>
-                <a href="story.html" class="btn-primary px-10 py-4 rounded-full text-sm font-semibold tracking-widest uppercase text-white">Our Story</a>
+                <a href="shop.html" class="btn-solid px-10 py-4 rounded-full text-sm font-semibold tracking-widest uppercase" data-i18n="home.hero.cta1">Explore Products</a>
+                <a href="story.html" class="btn-primary px-10 py-4 rounded-full text-sm font-semibold tracking-widest uppercase text-white" data-i18n="home.hero.cta2">Our Story</a>
             </div>
             <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-float" style="animation-delay: 1.5s;">
                 <div class="w-6 h-10 rounded-full border border-white/20 flex items-start justify-center p-1.5">
@@ -107,33 +110,33 @@
     <!-- MARQUEE -->
     <div class="relative overflow-hidden py-6 border-y border-white/5">
         <div class="flex whitespace-nowrap marquee-track">
-            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8">Science-Backed</span>
+            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8" data-i18n="marquee.1">Science-Backed</span>
             <span class="text-white/10 mx-4">&#9670;</span>
-            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8">GMP Certified</span>
+            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8" data-i18n="marquee.2">GMP Certified</span>
             <span class="text-white/10 mx-4">&#9670;</span>
-            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8">Premium Ingredients</span>
+            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8" data-i18n="marquee.3">Premium Ingredients</span>
             <span class="text-white/10 mx-4">&#9670;</span>
-            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8">Made for Performance</span>
+            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8" data-i18n="marquee.4">Made for Performance</span>
             <span class="text-white/10 mx-4">&#9670;</span>
-            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8">Thailand Based</span>
+            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8" data-i18n="marquee.5">Thailand Based</span>
             <span class="text-white/10 mx-4">&#9670;</span>
-            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8">Western Quality</span>
+            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8" data-i18n="marquee.6">Western Quality</span>
             <span class="text-white/10 mx-4">&#9670;</span>
-            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8">No Compromises</span>
+            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8" data-i18n="marquee.7">No Compromises</span>
             <span class="text-white/10 mx-4">&#9670;</span>
-            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8">Science-Backed</span>
+            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8" data-i18n="marquee.1">Science-Backed</span>
             <span class="text-white/10 mx-4">&#9670;</span>
-            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8">GMP Certified</span>
+            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8" data-i18n="marquee.2">GMP Certified</span>
             <span class="text-white/10 mx-4">&#9670;</span>
-            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8">Premium Ingredients</span>
+            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8" data-i18n="marquee.3">Premium Ingredients</span>
             <span class="text-white/10 mx-4">&#9670;</span>
-            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8">Made for Performance</span>
+            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8" data-i18n="marquee.4">Made for Performance</span>
             <span class="text-white/10 mx-4">&#9670;</span>
-            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8">Thailand Based</span>
+            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8" data-i18n="marquee.5">Thailand Based</span>
             <span class="text-white/10 mx-4">&#9670;</span>
-            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8">Western Quality</span>
+            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8" data-i18n="marquee.6">Western Quality</span>
             <span class="text-white/10 mx-4">&#9670;</span>
-            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8">No Compromises</span>
+            <span class="text-sm tracking-[0.25em] uppercase text-white/20 font-medium mx-8" data-i18n="marquee.7">No Compromises</span>
             <span class="text-white/10 mx-4">&#9670;</span>
         </div>
     </div>
@@ -144,37 +147,37 @@
         <div class="orb orb-1 -bottom-40 left-1/4 opacity-20"></div>
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-20 reveal">
-                <p class="text-sm tracking-[0.3em] uppercase text-ppg-muted mb-4 font-medium">Why Prime</p>
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">The <span class="text-shimmer">PPG Difference</span></h2>
+                <p class="text-sm tracking-[0.3em] uppercase text-ppg-muted mb-4 font-medium" data-i18n="home.why.label">Why Prime</p>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight" data-i18n-html="home.why.title">The <span class="text-shimmer">PPG Difference</span></h2>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="glass-card rounded-3xl p-8 text-center card-shine reveal">
                     <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
                         <svg class="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                     </div>
-                    <h3 class="text-lg font-semibold mb-3">Clinical Doses</h3>
-                    <p class="text-ppg-muted text-sm leading-relaxed">Every ingredient at research-validated dosages. No pixie-dusting.</p>
+                    <h3 class="text-lg font-semibold mb-3" data-i18n="home.why.clinicalTitle">Clinical Doses</h3>
+                    <p class="text-ppg-muted text-sm leading-relaxed" data-i18n="home.why.clinicalDesc">Every ingredient at research-validated dosages. No pixie-dusting.</p>
                 </div>
                 <div class="glass-card rounded-3xl p-8 text-center card-shine reveal" style="transition-delay: 0.1s;">
                     <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
                         <svg class="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
                     </div>
-                    <h3 class="text-lg font-semibold mb-3">3rd Party Tested</h3>
-                    <p class="text-ppg-muted text-sm leading-relaxed">Independent lab verification for purity and potency on every batch.</p>
+                    <h3 class="text-lg font-semibold mb-3" data-i18n="home.why.testedTitle">3rd Party Tested</h3>
+                    <p class="text-ppg-muted text-sm leading-relaxed" data-i18n="home.why.testedDesc">Independent lab verification for purity and potency on every batch.</p>
                 </div>
                 <div class="glass-card rounded-3xl p-8 text-center card-shine reveal" style="transition-delay: 0.2s;">
                     <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
                         <svg class="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     </div>
-                    <h3 class="text-lg font-semibold mb-3">Made for Thailand</h3>
-                    <p class="text-ppg-muted text-sm leading-relaxed">Formulated for tropical climate, local dietary patterns, and Thai athletes.</p>
+                    <h3 class="text-lg font-semibold mb-3" data-i18n="home.why.thaiTitle">Made for Thailand</h3>
+                    <p class="text-ppg-muted text-sm leading-relaxed" data-i18n="home.why.thaiDesc">Formulated for tropical climate, local dietary patterns, and Thai athletes.</p>
                 </div>
                 <div class="glass-card rounded-3xl p-8 text-center card-shine reveal" style="transition-delay: 0.3s;">
                     <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
                         <svg class="w-7 h-7 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                     </div>
-                    <h3 class="text-lg font-semibold mb-3">Fast Delivery</h3>
-                    <p class="text-ppg-muted text-sm leading-relaxed">Next-day delivery in Bangkok. Nationwide shipping across Thailand.</p>
+                    <h3 class="text-lg font-semibold mb-3" data-i18n="home.why.deliveryTitle">Fast Delivery</h3>
+                    <p class="text-ppg-muted text-sm leading-relaxed" data-i18n="home.why.deliveryDesc">Next-day delivery in Bangkok. Nationwide shipping across Thailand.</p>
                 </div>
             </div>
         </div>
@@ -189,10 +192,10 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 reveal">
                 <div>
-                    <p class="text-sm tracking-[0.3em] uppercase text-ppg-muted mb-4 font-medium">Featured</p>
-                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">Best <span class="text-shimmer">Sellers</span></h2>
+                    <p class="text-sm tracking-[0.3em] uppercase text-ppg-muted mb-4 font-medium" data-i18n="home.featured.label">Featured</p>
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight" data-i18n-html="home.featured.title">Best <span class="text-shimmer">Sellers</span></h2>
                 </div>
-                <a href="shop.html" class="btn-primary inline-flex items-center gap-3 px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide text-white mt-6 md:mt-0">
+                <a href="shop.html" class="btn-primary inline-flex items-center gap-3 px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide text-white mt-6 md:mt-0" data-i18n="home.featured.viewAll">
                     View All Products
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </a>
@@ -206,13 +209,13 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60">Pre-Workout</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60" data-i18n="product.preWorkout">Pre-Workout</span>
                         </div>
-                        <h3 class="text-lg font-semibold mb-1">Prime Ignite</h3>
-                        <p class="text-ppg-muted text-sm mb-4">High-stim pre-workout with clinically dosed citrulline, beta-alanine & caffeine.</p>
+                        <h3 class="text-lg font-semibold mb-1" data-i18n="product.ignite.name">Prime Ignite</h3>
+                        <p class="text-ppg-muted text-sm mb-4" data-i18n="product.ignite.descShort">High-stim pre-workout with clinically dosed citrulline, beta-alanine & caffeine.</p>
                         <div class="flex items-center justify-between">
                             <span class="text-xl font-bold">฿1,490</span>
-                            <a href="shop.html" class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide">View Product</a>
+                            <a href="shop.html" class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide" data-i18n="home.featured.viewProduct">View Product</a>
                         </div>
                     </div>
                 </div>
@@ -224,13 +227,13 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60">Protein</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60" data-i18n="product.protein">Protein</span>
                         </div>
-                        <h3 class="text-lg font-semibold mb-1">Prime Whey Isolate</h3>
-                        <p class="text-ppg-muted text-sm mb-4">Ultra-pure whey isolate, 27g protein per scoop. Zero added sugar.</p>
+                        <h3 class="text-lg font-semibold mb-1" data-i18n="product.whey.name">Prime Whey Isolate</h3>
+                        <p class="text-ppg-muted text-sm mb-4" data-i18n="product.whey.descShort">Ultra-pure whey isolate, 27g protein per scoop. Zero added sugar.</p>
                         <div class="flex items-center justify-between">
                             <span class="text-xl font-bold">฿1,890</span>
-                            <a href="shop.html" class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide">View Product</a>
+                            <a href="shop.html" class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide" data-i18n="home.featured.viewProduct">View Product</a>
                         </div>
                     </div>
                 </div>
@@ -242,13 +245,13 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60">Recovery</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60" data-i18n="product.recovery">Recovery</span>
                         </div>
-                        <h3 class="text-lg font-semibold mb-1">Prime Recover</h3>
-                        <p class="text-ppg-muted text-sm mb-4">EAA + electrolyte recovery formula. Designed for Thailand's climate.</p>
+                        <h3 class="text-lg font-semibold mb-1" data-i18n="product.recover.name">Prime Recover</h3>
+                        <p class="text-ppg-muted text-sm mb-4" data-i18n="product.recover.descShort">EAA + electrolyte recovery formula. Designed for Thailand's climate.</p>
                         <div class="flex items-center justify-between">
                             <span class="text-xl font-bold">฿1,290</span>
-                            <a href="shop.html" class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide">View Product</a>
+                            <a href="shop.html" class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide" data-i18n="home.featured.viewProduct">View Product</a>
                         </div>
                     </div>
                 </div>
@@ -264,8 +267,8 @@
         <div class="orb orb-3 top-0 right-1/4 opacity-30"></div>
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-20 reveal">
-                <p class="text-sm tracking-[0.3em] uppercase text-ppg-muted mb-4 font-medium">Testimonials</p>
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">What Athletes <span class="text-shimmer">Say</span></h2>
+                <p class="text-sm tracking-[0.3em] uppercase text-ppg-muted mb-4 font-medium" data-i18n="home.testimonials.label">Testimonials</p>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight" data-i18n-html="home.testimonials.title">What Athletes <span class="text-shimmer">Say</span></h2>
             </div>
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="glass-card rounded-3xl p-8 card-shine reveal">
@@ -276,12 +279,12 @@
                         <svg class="w-4 h-4 text-white/60" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg class="w-4 h-4 text-white/60" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     </div>
-                    <p class="text-ppg-silver/90 leading-relaxed mb-8 text-lg font-light italic">"Finally a brand in Thailand that doesn't cut corners. The Ignite pre-workout hits different — clean energy, no crash."</p>
+                    <p class="text-ppg-silver/90 leading-relaxed mb-8 text-lg font-light italic" data-i18n="home.testimonials.q1">"Finally a brand in Thailand that doesn't cut corners. The Ignite pre-workout hits different — clean energy, no crash."</p>
                     <div class="flex items-center gap-4">
                         <div class="w-10 h-10 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-sm font-semibold text-white/60">JK</div>
                         <div>
-                            <p class="text-sm font-semibold">James K.</p>
-                            <p class="text-ppg-muted text-xs">CrossFit Athlete, Bangkok</p>
+                            <p class="text-sm font-semibold" data-i18n="home.testimonials.a1name">James K.</p>
+                            <p class="text-ppg-muted text-xs" data-i18n="home.testimonials.a1role">CrossFit Athlete, Bangkok</p>
                         </div>
                     </div>
                 </div>
@@ -293,12 +296,12 @@
                         <svg class="w-4 h-4 text-white/60" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg class="w-4 h-4 text-white/60" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     </div>
-                    <p class="text-ppg-silver/90 leading-relaxed mb-8 text-lg font-light italic">"The whey isolate mixes perfectly and tastes amazing. I've tried every brand available here — PPG is on another level."</p>
+                    <p class="text-ppg-silver/90 leading-relaxed mb-8 text-lg font-light italic" data-i18n="home.testimonials.q2">"The whey isolate mixes perfectly and tastes amazing. I've tried every brand available here — PPG is on another level."</p>
                     <div class="flex items-center gap-4">
                         <div class="w-10 h-10 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-sm font-semibold text-white/60">SP</div>
                         <div>
-                            <p class="text-sm font-semibold">Sarah P.</p>
-                            <p class="text-ppg-muted text-xs">Fitness Coach, Chiang Mai</p>
+                            <p class="text-sm font-semibold" data-i18n="home.testimonials.a2name">Sarah P.</p>
+                            <p class="text-ppg-muted text-xs" data-i18n="home.testimonials.a2role">Fitness Coach, Chiang Mai</p>
                         </div>
                     </div>
                 </div>
@@ -310,12 +313,12 @@
                         <svg class="w-4 h-4 text-white/60" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg class="w-4 h-4 text-white/60" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     </div>
-                    <p class="text-ppg-silver/90 leading-relaxed mb-8 text-lg font-light italic">"Transparent labels, real doses, and great customer service. PPG has earned my loyalty. The recovery formula is a game changer."</p>
+                    <p class="text-ppg-silver/90 leading-relaxed mb-8 text-lg font-light italic" data-i18n="home.testimonials.q3">"Transparent labels, real doses, and great customer service. PPG has earned my loyalty. The recovery formula is a game changer."</p>
                     <div class="flex items-center gap-4">
                         <div class="w-10 h-10 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-sm font-semibold text-white/60">MT</div>
                         <div>
-                            <p class="text-sm font-semibold">Mike T.</p>
-                            <p class="text-ppg-muted text-xs">Muay Thai Fighter, Phuket</p>
+                            <p class="text-sm font-semibold" data-i18n="home.testimonials.a3name">Mike T.</p>
+                            <p class="text-ppg-muted text-xs" data-i18n="home.testimonials.a3role">Muay Thai Fighter, Phuket</p>
                         </div>
                     </div>
                 </div>
@@ -330,14 +333,14 @@
     <section class="relative py-32 overflow-hidden">
         <div class="orb orb-1 top-0 left-1/2 -translate-x-1/2 opacity-30"></div>
         <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center reveal">
-            <p class="text-sm tracking-[0.3em] uppercase text-ppg-muted mb-4 font-medium">Stay Updated</p>
-            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Get <span class="text-shimmer">Early Access</span></h2>
-            <p class="text-ppg-silver/70 text-lg max-w-xl mx-auto leading-relaxed mb-10">Be the first to know about new product drops, exclusive deals, and science-backed performance tips.</p>
+            <p class="text-sm tracking-[0.3em] uppercase text-ppg-muted mb-4 font-medium" data-i18n="home.newsletter.label">Stay Updated</p>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6" data-i18n-html="home.newsletter.title">Get <span class="text-shimmer">Early Access</span></h2>
+            <p class="text-ppg-silver/70 text-lg max-w-xl mx-auto leading-relaxed mb-10" data-i18n="home.newsletter.subtitle">Be the first to know about new product drops, exclusive deals, and science-backed performance tips.</p>
             <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" onsubmit="event.preventDefault();">
-                <input type="email" placeholder="Enter your email" class="glass-input flex-1 px-6 py-4 rounded-full text-sm text-white placeholder-white/30">
-                <button type="submit" class="btn-solid px-8 py-4 rounded-full text-sm font-semibold tracking-wide whitespace-nowrap">Subscribe</button>
+                <input type="email" placeholder="Enter your email" class="glass-input flex-1 px-6 py-4 rounded-full text-sm text-white placeholder-white/30" data-i18n-placeholder="home.newsletter.placeholder">
+                <button type="submit" class="btn-solid px-8 py-4 rounded-full text-sm font-semibold tracking-wide whitespace-nowrap" data-i18n="home.newsletter.subscribe">Subscribe</button>
             </form>
-            <p class="text-ppg-muted text-xs mt-4">By subscribing you agree to our privacy policy. Unsubscribe anytime.</p>
+            <p class="text-ppg-muted text-xs mt-4" data-i18n="home.newsletter.disclaimer">By subscribing you agree to our privacy policy. Unsubscribe anytime.</p>
         </div>
     </section>
 
@@ -348,39 +351,39 @@
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-16">
                 <div class="col-span-2 md:col-span-4 lg:col-span-1 mb-4 lg:mb-0">
                     <img src="assets/logo.png" alt="Prime Performance Group" class="h-8 w-auto mb-6 brightness-75">
-                    <p class="text-ppg-muted text-sm leading-relaxed max-w-xs">Premium, science-backed supplements crafted for the Thai market. Western quality. Local commitment.</p>
+                    <p class="text-ppg-muted text-sm leading-relaxed max-w-xs" data-i18n="footer.tagline">Premium, science-backed supplements crafted for the Thai market. Western quality. Local commitment.</p>
                 </div>
                 <div>
-                    <h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4">Shop</h4>
+                    <h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4" data-i18n="footer.shopHead">Shop</h4>
                     <ul class="space-y-3">
-                        <li><a href="shop.html" class="text-sm text-white/50 hover:text-white transition-colors">Pre-Workout</a></li>
-                        <li><a href="shop.html" class="text-sm text-white/50 hover:text-white transition-colors">Protein</a></li>
-                        <li><a href="shop.html" class="text-sm text-white/50 hover:text-white transition-colors">Recovery</a></li>
-                        <li><a href="shop.html" class="text-sm text-white/50 hover:text-white transition-colors">Wellness</a></li>
-                        <li><a href="shop.html" class="text-sm text-white/50 hover:text-white transition-colors">Stacks</a></li>
+                        <li><a href="shop.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.preWorkout">Pre-Workout</a></li>
+                        <li><a href="shop.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.protein">Protein</a></li>
+                        <li><a href="shop.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.recovery">Recovery</a></li>
+                        <li><a href="shop.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.wellness">Wellness</a></li>
+                        <li><a href="shop.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.stacks">Stacks</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4">Company</h4>
+                    <h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4" data-i18n="footer.companyHead">Company</h4>
                     <ul class="space-y-3">
-                        <li><a href="about.html" class="text-sm text-white/50 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="story.html" class="text-sm text-white/50 hover:text-white transition-colors">Our Story</a></li>
-                        <li><a href="blog.html" class="text-sm text-white/50 hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="contact.html" class="text-sm text-white/50 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="about.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.aboutUs">About Us</a></li>
+                        <li><a href="story.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.ourStory">Our Story</a></li>
+                        <li><a href="blog.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.blog">Blog</a></li>
+                        <li><a href="contact.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.contact">Contact</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4">Support</h4>
+                    <h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4" data-i18n="footer.supportHead">Support</h4>
                     <ul class="space-y-3">
-                        <li><a href="contact.html" class="text-sm text-white/50 hover:text-white transition-colors">Shipping Info</a></li>
-                        <li><a href="contact.html" class="text-sm text-white/50 hover:text-white transition-colors">Returns & Refunds</a></li>
-                        <li><a href="contact.html" class="text-sm text-white/50 hover:text-white transition-colors">FAQ</a></li>
-                        <li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Privacy Policy</a></li>
-                        <li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="contact.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.shippingInfo">Shipping Info</a></li>
+                        <li><a href="contact.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.returns">Returns & Refunds</a></li>
+                        <li><a href="contact.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.faq">FAQ</a></li>
+                        <li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.privacyPolicy">Privacy Policy</a></li>
+                        <li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.termsOfService">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4">Connect</h4>
+                    <h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4" data-i18n="footer.connectHead">Connect</h4>
                     <ul class="space-y-3">
                         <li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Instagram</a></li>
                         <li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Facebook</a></li>
@@ -391,16 +394,17 @@
                 </div>
             </div>
             <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-ppg-muted text-xs">&copy; 2026 Prime Performance Group. All rights reserved.</p>
+                <p class="text-ppg-muted text-xs" data-i18n="footer.copyright">&copy; 2026 Prime Performance Group. All rights reserved.</p>
                 <div class="flex items-center gap-6">
-                    <a href="#" class="text-ppg-muted text-xs hover:text-white transition-colors">Privacy</a>
-                    <a href="#" class="text-ppg-muted text-xs hover:text-white transition-colors">Terms</a>
-                    <a href="#" class="text-ppg-muted text-xs hover:text-white transition-colors">Cookies</a>
+                    <a href="#" class="text-ppg-muted text-xs hover:text-white transition-colors" data-i18n="footer.privacy">Privacy</a>
+                    <a href="#" class="text-ppg-muted text-xs hover:text-white transition-colors" data-i18n="footer.terms">Terms</a>
+                    <a href="#" class="text-ppg-muted text-xs hover:text-white transition-colors" data-i18n="footer.cookies">Cookies</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
 </body>
 </html>

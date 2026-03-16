@@ -9,8 +9,9 @@
     <script>tailwind.config={theme:{extend:{colors:{ppg:{black:'#000000',dark:'#0a0a0a',card:'#111111',silver:'#C9C9C9',muted:'#8A8A8A',white:'#FFFFFF',accent:'#a78bfa'}}}}}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <script>if(localStorage.getItem("ppg-lang")==="th")document.documentElement.classList.add("lang-loading");</script>
 </head>
 <body class="noise">
 
@@ -20,16 +21,17 @@
             <div class="flex items-center justify-between h-20">
                 <a href="index.html" class="flex-shrink-0"><img src="assets/logo.png" alt="Prime Performance Group" class="h-10 w-auto"></a>
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="index.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Home</a>
-                    <a href="about.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">About</a>
-                    <a href="story.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Our Story</a>
-                    <a href="shop.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Shop</a>
-                    <a href="blog.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Blog</a>
-                    <a href="community.html" class="nav-link-active text-sm font-medium tracking-wider uppercase">Community</a>
-                    <a href="contact.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Contact</a>
+                    <a href="index.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase" data-i18n="nav.home">Home</a>
+                    <a href="about.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase" data-i18n="nav.about">About</a>
+                    <a href="story.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase" data-i18n="nav.story">Our Story</a>
+                    <a href="shop.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase" data-i18n="nav.shop">Shop</a>
+                    <a href="blog.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase" data-i18n="nav.blog">Blog</a>
+                    <a href="community.html" class="nav-link-active text-sm font-medium tracking-wider uppercase" data-i18n="nav.community">Community</a>
+                    <a href="contact.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase" data-i18n="nav.contact">Contact</a>
                 </div>
                 <div class="hidden lg:flex items-center gap-4">
-                    <a href="shop.html" class="btn-solid px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide">Shop Now</a>
+                    <a href="shop.html" class="btn-solid px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide" data-i18n="nav.shopNow">Shop Now</a>
+                    <button onclick="ppgI18n.toggleLang()" class="px-3 py-1.5 rounded-full text-xs font-semibold tracking-wider glass text-white/70 hover:text-white hover:bg-white/10 transition-all"><span class="lang-toggle-text">TH</span></button>
                 </div>
                 <button id="menu-toggle" class="lg:hidden p-2 text-white" aria-label="Menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -41,13 +43,14 @@
         </div>
         <div id="mobile-menu" class="mobile-menu fixed inset-0 top-20 bg-black/95 backdrop-blur-xl lg:hidden z-40">
             <div class="flex flex-col items-center justify-center h-full gap-8">
-                <a href="index.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link">Home</a>
-                <a href="about.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link">About</a>
-                <a href="story.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link">Our Story</a>
-                <a href="shop.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link">Shop</a>
-                <a href="blog.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link">Blog</a>
-                <a href="community.html" class="text-2xl font-light tracking-widest uppercase text-white mobile-link">Community</a>
-                <a href="contact.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link">Contact</a>
+                <a href="index.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link" data-i18n="nav.home">Home</a>
+                <a href="about.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link" data-i18n="nav.about">About</a>
+                <a href="story.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link" data-i18n="nav.story">Our Story</a>
+                <a href="shop.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link" data-i18n="nav.shop">Shop</a>
+                <a href="blog.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link" data-i18n="nav.blog">Blog</a>
+                <a href="community.html" class="text-2xl font-light tracking-widest uppercase text-white mobile-link" data-i18n="nav.community">Community</a>
+                <a href="contact.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link" data-i18n="nav.contact">Contact</a>
+                <button onclick="ppgI18n.toggleLang()" class="px-6 py-2 rounded-full text-sm font-semibold tracking-widest glass text-white/70 hover:text-white hover:bg-white/10 transition-all mt-2"><span class="lang-toggle-text">TH</span></button>
             </div>
         </div>
     </nav>
@@ -58,11 +61,11 @@
         <div class="orb orb-3 bottom-0 -left-20 animate-float-slow"></div>
         <div class="absolute inset-0 grid-pattern opacity-30"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <p class="text-sm tracking-[0.3em] uppercase text-ppg-muted mb-4 font-medium animate-fade-in" style="animation-delay:0.2s;animation-fill-mode:both;">Community</p>
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] animate-slide-up" style="animation-delay:0.4s;animation-fill-mode:both;">
+            <p class="text-sm tracking-[0.3em] uppercase text-ppg-muted mb-4 font-medium animate-fade-in" style="animation-delay:0.2s;animation-fill-mode:both;" data-i18n="community.label">Community</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] animate-slide-up" style="animation-delay:0.4s;animation-fill-mode:both;" data-i18n-html="community.title">
                 Join the <span class="text-shimmer">Movement</span>
             </h1>
-            <p class="text-ppg-silver/70 text-lg max-w-2xl mx-auto mt-8 leading-relaxed animate-slide-up" style="animation-delay:0.6s;animation-fill-mode:both;">
+            <p class="text-ppg-silver/70 text-lg max-w-2xl mx-auto mt-8 leading-relaxed animate-slide-up" style="animation-delay:0.6s;animation-fill-mode:both;" data-i18n="community.subtitle">
                 More than supplements — we're building a community of driven individuals across Thailand who refuse to settle for average.
             </p>
         </div>
@@ -78,45 +81,45 @@
                     <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6">
                         <svg class="w-6 h-6 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">PPG Athletes</h3>
-                    <p class="text-ppg-silver/70 leading-relaxed mb-6">Our ambassador program for competitive athletes and coaches across Thailand. Represent a brand you actually believe in. Get exclusive product access, sponsorship support, and direct collaboration with our team.</p>
+                    <h3 class="text-2xl font-bold mb-4" data-i18n="community.athletesTitle">PPG Athletes</h3>
+                    <p class="text-ppg-silver/70 leading-relaxed mb-6" data-i18n="community.athletesDesc">Our ambassador program for competitive athletes and coaches across Thailand. Represent a brand you actually believe in. Get exclusive product access, sponsorship support, and direct collaboration with our team.</p>
                     <ul class="space-y-3 text-ppg-muted text-sm mb-8">
-                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Free product monthly</li>
-                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Unique discount code</li>
-                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Content collaboration</li>
-                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Event invitations</li>
+                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <span data-i18n="community.athletesPerk1">Free product monthly</span></li>
+                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <span data-i18n="community.athletesPerk2">Unique discount code</span></li>
+                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <span data-i18n="community.athletesPerk3">Content collaboration</span></li>
+                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <span data-i18n="community.athletesPerk4">Event invitations</span></li>
                     </ul>
-                    <a href="contact.html" class="btn-solid inline-block px-8 py-3 rounded-full text-sm font-semibold tracking-wide">Apply Now</a>
+                    <a href="contact.html" class="btn-solid inline-block px-8 py-3 rounded-full text-sm font-semibold tracking-wide" data-i18n="community.athletesCta">Apply Now</a>
                 </div>
 
                 <div class="glass-card rounded-3xl p-10 card-shine reveal" style="transition-delay:0.1s;">
                     <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6">
                         <svg class="w-6 h-6 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">LINE Community</h3>
-                    <p class="text-ppg-silver/70 leading-relaxed mb-6">Exclusive tips, early product drops, and direct access to our team. Join thousands of members on our LINE group for daily motivation, Q&A with our formulators, and first access to limited-edition products.</p>
+                    <h3 class="text-2xl font-bold mb-4" data-i18n="community.lineTitle">LINE Community</h3>
+                    <p class="text-ppg-silver/70 leading-relaxed mb-6" data-i18n="community.lineDesc">Exclusive tips, early product drops, and direct access to our team. Join thousands of members on our LINE group for daily motivation, Q&A with our formulators, and first access to limited-edition products.</p>
                     <ul class="space-y-3 text-ppg-muted text-sm mb-8">
-                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Early product access</li>
-                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Exclusive discounts</li>
-                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Direct team access</li>
-                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Nutrition Q&A</li>
+                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <span data-i18n="community.linePerk1">Early product access</span></li>
+                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <span data-i18n="community.linePerk2">Exclusive discounts</span></li>
+                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <span data-i18n="community.linePerk3">Direct team access</span></li>
+                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <span data-i18n="community.linePerk4">Nutrition Q&A</span></li>
                     </ul>
-                    <a href="#" class="btn-solid inline-block px-8 py-3 rounded-full text-sm font-semibold tracking-wide">Join LINE</a>
+                    <a href="#" class="btn-solid inline-block px-8 py-3 rounded-full text-sm font-semibold tracking-wide" data-i18n="community.lineCta">Join LINE</a>
                 </div>
 
                 <div class="glass-card rounded-3xl p-10 card-shine reveal" style="transition-delay:0.2s;">
                     <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6">
                         <svg class="w-6 h-6 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Events & Meetups</h3>
-                    <p class="text-ppg-silver/70 leading-relaxed mb-6">Group workouts, athlete meetups, and supplement education events across Bangkok and beyond. Connect with like-minded people who share your commitment to performance and health.</p>
+                    <h3 class="text-2xl font-bold mb-4" data-i18n="community.eventsTitle">Events & Meetups</h3>
+                    <p class="text-ppg-silver/70 leading-relaxed mb-6" data-i18n="community.eventsDesc">Group workouts, athlete meetups, and supplement education events across Bangkok and beyond. Connect with like-minded people who share your commitment to performance and health.</p>
                     <ul class="space-y-3 text-ppg-muted text-sm mb-8">
-                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Monthly group workouts</li>
-                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Athlete meetups</li>
-                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Education seminars</li>
-                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Pop-up experiences</li>
+                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <span data-i18n="community.eventsPerk1">Monthly group workouts</span></li>
+                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <span data-i18n="community.eventsPerk2">Athlete meetups</span></li>
+                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <span data-i18n="community.eventsPerk3">Education seminars</span></li>
+                        <li class="flex items-center gap-3"><svg class="w-4 h-4 text-white/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <span data-i18n="community.eventsPerk4">Pop-up experiences</span></li>
                     </ul>
-                    <a href="#events" class="btn-solid inline-block px-8 py-3 rounded-full text-sm font-semibold tracking-wide">See Events</a>
+                    <a href="#events" class="btn-solid inline-block px-8 py-3 rounded-full text-sm font-semibold tracking-wide" data-i18n="community.eventsCta">See Events</a>
                 </div>
             </div>
 
@@ -125,10 +128,10 @@
             <!-- Social Proof -->
             <div class="glass-strong rounded-3xl p-8 md:p-12 mb-24 reveal">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    <div><div class="text-3xl md:text-5xl font-bold mb-2">15K+</div><p class="text-ppg-muted text-sm">Social Followers</p></div>
-                    <div><div class="text-3xl md:text-5xl font-bold mb-2">5K+</div><p class="text-ppg-muted text-sm">LINE Members</p></div>
-                    <div><div class="text-3xl md:text-5xl font-bold mb-2">200+</div><p class="text-ppg-muted text-sm">Gym Partners</p></div>
-                    <div><div class="text-3xl md:text-5xl font-bold mb-2">50+</div><p class="text-ppg-muted text-sm">PPG Athletes</p></div>
+                    <div><div class="text-3xl md:text-5xl font-bold mb-2">15K+</div><p class="text-ppg-muted text-sm" data-i18n="community.socialFollowers">Social Followers</p></div>
+                    <div><div class="text-3xl md:text-5xl font-bold mb-2">5K+</div><p class="text-ppg-muted text-sm" data-i18n="community.lineMembers">LINE Members</p></div>
+                    <div><div class="text-3xl md:text-5xl font-bold mb-2">200+</div><p class="text-ppg-muted text-sm" data-i18n="community.gymPartners">Gym Partners</p></div>
+                    <div><div class="text-3xl md:text-5xl font-bold mb-2">50+</div><p class="text-ppg-muted text-sm" data-i18n="community.ppgAthletes">PPG Athletes</p></div>
                 </div>
             </div>
 
@@ -137,8 +140,8 @@
             <!-- Upcoming Events -->
             <div id="events" class="mb-24">
                 <div class="text-center mb-16 reveal">
-                    <p class="text-sm tracking-[0.3em] uppercase text-ppg-muted mb-4 font-medium">Upcoming</p>
-                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Next <span class="text-shimmer">Events</span></h2>
+                    <p class="text-sm tracking-[0.3em] uppercase text-ppg-muted mb-4 font-medium" data-i18n="community.upcomingLabel">Upcoming</p>
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight" data-i18n-html="community.upcomingTitle">Next <span class="text-shimmer">Events</span></h2>
                 </div>
 
                 <div class="space-y-4">
@@ -148,10 +151,10 @@
                             <div class="text-ppg-muted text-xs uppercase tracking-wider">Mar</div>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-lg font-semibold mb-1">PPG Community Workout — Bangkok</h3>
-                            <p class="text-ppg-muted text-sm">Lumpini Park, 6:00 AM — Free group HIIT session with PPG athletes. Samples & merch giveaways.</p>
+                            <h3 class="text-lg font-semibold mb-1" data-i18n="community.event1Title">PPG Community Workout — Bangkok</h3>
+                            <p class="text-ppg-muted text-sm" data-i18n="community.event1Desc">Lumpini Park, 6:00 AM — Free group HIIT session with PPG athletes. Samples & merch giveaways.</p>
                         </div>
-                        <a href="#" class="btn-primary px-6 py-2.5 rounded-full text-xs font-semibold tracking-wide text-white whitespace-nowrap">RSVP</a>
+                        <a href="#" class="btn-primary px-6 py-2.5 rounded-full text-xs font-semibold tracking-wide text-white whitespace-nowrap" data-i18n="community.rsvp">RSVP</a>
                     </div>
 
                     <div class="glass-card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-6 reveal" style="transition-delay:0.1s;">
@@ -160,10 +163,10 @@
                             <div class="text-ppg-muted text-xs uppercase tracking-wider">Apr</div>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-lg font-semibold mb-1">Supplement Science Seminar</h3>
-                            <p class="text-ppg-muted text-sm">PPG HQ, Bangkok — Learn how to read labels, understand dosing, and build your supplement stack.</p>
+                            <h3 class="text-lg font-semibold mb-1" data-i18n="community.event2Title">Supplement Science Seminar</h3>
+                            <p class="text-ppg-muted text-sm" data-i18n="community.event2Desc">PPG HQ, Bangkok — Learn how to read labels, understand dosing, and build your supplement stack.</p>
                         </div>
-                        <a href="#" class="btn-primary px-6 py-2.5 rounded-full text-xs font-semibold tracking-wide text-white whitespace-nowrap">RSVP</a>
+                        <a href="#" class="btn-primary px-6 py-2.5 rounded-full text-xs font-semibold tracking-wide text-white whitespace-nowrap" data-i18n="community.rsvp">RSVP</a>
                     </div>
 
                     <div class="glass-card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-6 reveal" style="transition-delay:0.2s;">
@@ -172,10 +175,10 @@
                             <div class="text-ppg-muted text-xs uppercase tracking-wider">Apr</div>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-lg font-semibold mb-1">PPG x CrossFit Chiang Mai</h3>
-                            <p class="text-ppg-muted text-sm">CrossFit Chiang Mai — Partner WOD event with product tasting and athlete Q&A.</p>
+                            <h3 class="text-lg font-semibold mb-1" data-i18n="community.event3Title">PPG x CrossFit Chiang Mai</h3>
+                            <p class="text-ppg-muted text-sm" data-i18n="community.event3Desc">CrossFit Chiang Mai — Partner WOD event with product tasting and athlete Q&A.</p>
                         </div>
-                        <a href="#" class="btn-primary px-6 py-2.5 rounded-full text-xs font-semibold tracking-wide text-white whitespace-nowrap">RSVP</a>
+                        <a href="#" class="btn-primary px-6 py-2.5 rounded-full text-xs font-semibold tracking-wide text-white whitespace-nowrap" data-i18n="community.rsvp">RSVP</a>
                     </div>
                 </div>
             </div>
@@ -185,8 +188,8 @@
             <!-- Featured Athletes -->
             <div class="mb-24">
                 <div class="text-center mb-16 reveal">
-                    <p class="text-sm tracking-[0.3em] uppercase text-ppg-muted mb-4 font-medium">PPG Athletes</p>
-                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Meet the <span class="text-shimmer">Team</span></h2>
+                    <p class="text-sm tracking-[0.3em] uppercase text-ppg-muted mb-4 font-medium" data-i18n="community.featuredLabel">PPG Athletes</p>
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight" data-i18n-html="community.featuredTitle">Meet the <span class="text-shimmer">Team</span></h2>
                 </div>
 
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -195,8 +198,8 @@
                             <div class="w-20 h-20 rounded-full bg-white/10 border border-white/10 flex items-center justify-center"><span class="text-white/30 text-xs">Photo</span></div>
                         </div>
                         <div class="p-6 text-center">
-                            <h3 class="text-lg font-semibold mb-1">Athlete Name</h3>
-                            <p class="text-ppg-muted text-sm mb-3">CrossFit — Bangkok</p>
+                            <h3 class="text-lg font-semibold mb-1" data-i18n="community.athleteName">Athlete Name</h3>
+                            <p class="text-ppg-muted text-sm mb-3" data-i18n="community.sport1">CrossFit — Bangkok</p>
                             <div class="flex items-center justify-center gap-3">
                                 <a href="#" class="text-white/40 hover:text-white transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
                             </div>
@@ -207,8 +210,8 @@
                             <div class="w-20 h-20 rounded-full bg-white/10 border border-white/10 flex items-center justify-center"><span class="text-white/30 text-xs">Photo</span></div>
                         </div>
                         <div class="p-6 text-center">
-                            <h3 class="text-lg font-semibold mb-1">Athlete Name</h3>
-                            <p class="text-ppg-muted text-sm mb-3">Muay Thai — Phuket</p>
+                            <h3 class="text-lg font-semibold mb-1" data-i18n="community.athleteName">Athlete Name</h3>
+                            <p class="text-ppg-muted text-sm mb-3" data-i18n="community.sport2">Muay Thai — Phuket</p>
                             <div class="flex items-center justify-center gap-3">
                                 <a href="#" class="text-white/40 hover:text-white transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
                             </div>
@@ -219,8 +222,8 @@
                             <div class="w-20 h-20 rounded-full bg-white/10 border border-white/10 flex items-center justify-center"><span class="text-white/30 text-xs">Photo</span></div>
                         </div>
                         <div class="p-6 text-center">
-                            <h3 class="text-lg font-semibold mb-1">Athlete Name</h3>
-                            <p class="text-ppg-muted text-sm mb-3">Bodybuilding — Bangkok</p>
+                            <h3 class="text-lg font-semibold mb-1" data-i18n="community.athleteName">Athlete Name</h3>
+                            <p class="text-ppg-muted text-sm mb-3" data-i18n="community.sport3">Bodybuilding — Bangkok</p>
                             <div class="flex items-center justify-center gap-3">
                                 <a href="#" class="text-white/40 hover:text-white transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
                             </div>
@@ -231,8 +234,8 @@
                             <div class="w-20 h-20 rounded-full bg-white/10 border border-white/10 flex items-center justify-center"><span class="text-white/30 text-xs">Photo</span></div>
                         </div>
                         <div class="p-6 text-center">
-                            <h3 class="text-lg font-semibold mb-1">Athlete Name</h3>
-                            <p class="text-ppg-muted text-sm mb-3">Running — Chiang Mai</p>
+                            <h3 class="text-lg font-semibold mb-1" data-i18n="community.athleteName">Athlete Name</h3>
+                            <p class="text-ppg-muted text-sm mb-3" data-i18n="community.sport4">Running — Chiang Mai</p>
                             <div class="flex items-center justify-center gap-3">
                                 <a href="#" class="text-white/40 hover:text-white transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
                             </div>
@@ -243,8 +246,8 @@
 
             <!-- Social Follow CTA -->
             <div class="glass-strong rounded-3xl p-12 md:p-16 text-center reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Follow Us Everywhere</h2>
-                <p class="text-ppg-silver/70 text-lg mb-8 max-w-xl mx-auto">Stay connected for daily motivation, behind-the-scenes content, and exclusive drops.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="community.followTitle">Follow Us Everywhere</h2>
+                <p class="text-ppg-silver/70 text-lg mb-8 max-w-xl mx-auto" data-i18n="community.followSubtitle">Stay connected for daily motivation, behind-the-scenes content, and exclusive drops.</p>
                 <div class="flex items-center justify-center gap-4">
                     <a href="#" class="w-12 h-12 rounded-full glass flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
                     <a href="#" class="w-12 h-12 rounded-full glass flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
@@ -261,20 +264,21 @@
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-16">
                 <div class="col-span-2 md:col-span-4 lg:col-span-1 mb-4 lg:mb-0">
                     <img src="assets/logo.png" alt="Prime Performance Group" class="h-8 w-auto mb-6 brightness-75">
-                    <p class="text-ppg-muted text-sm leading-relaxed max-w-xs">Premium, science-backed supplements crafted for the Thai market.</p>
+                    <p class="text-ppg-muted text-sm leading-relaxed max-w-xs" data-i18n="footer.tagline">Premium, science-backed supplements crafted for the Thai market.</p>
                 </div>
-                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4">Shop</h4><ul class="space-y-3"><li><a href="shop.html" class="text-sm text-white/50 hover:text-white transition-colors">All Products</a></li></ul></div>
-                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4">Company</h4><ul class="space-y-3"><li><a href="about.html" class="text-sm text-white/50 hover:text-white transition-colors">About</a></li><li><a href="story.html" class="text-sm text-white/50 hover:text-white transition-colors">Our Story</a></li><li><a href="blog.html" class="text-sm text-white/50 hover:text-white transition-colors">Blog</a></li><li><a href="contact.html" class="text-sm text-white/50 hover:text-white transition-colors">Contact</a></li></ul></div>
-                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4">Support</h4><ul class="space-y-3"><li><a href="contact.html" class="text-sm text-white/50 hover:text-white transition-colors">FAQ</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Privacy</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Terms</a></li></ul></div>
-                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4">Connect</h4><ul class="space-y-3"><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Instagram</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Facebook</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">TikTok</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">LINE</a></li></ul></div>
+                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4" data-i18n="footer.shopHead">Shop</h4><ul class="space-y-3"><li><a href="shop.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.allProducts">All Products</a></li></ul></div>
+                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4" data-i18n="footer.companyHead">Company</h4><ul class="space-y-3"><li><a href="about.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="nav.about">About</a></li><li><a href="story.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.ourStory">Our Story</a></li><li><a href="blog.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.blog">Blog</a></li><li><a href="contact.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.contact">Contact</a></li></ul></div>
+                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4" data-i18n="footer.supportHead">Support</h4><ul class="space-y-3"><li><a href="contact.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.faq">FAQ</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.privacy">Privacy</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.terms">Terms</a></li></ul></div>
+                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4" data-i18n="footer.connectHead">Connect</h4><ul class="space-y-3"><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Instagram</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Facebook</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">TikTok</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">LINE</a></li></ul></div>
             </div>
             <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-ppg-muted text-xs">&copy; 2026 Prime Performance Group. All rights reserved.</p>
-                <div class="flex items-center gap-6"><a href="#" class="text-ppg-muted text-xs hover:text-white transition-colors">Privacy</a><a href="#" class="text-ppg-muted text-xs hover:text-white transition-colors">Terms</a></div>
+                <p class="text-ppg-muted text-xs" data-i18n="footer.copyright">&copy; 2026 Prime Performance Group. All rights reserved.</p>
+                <div class="flex items-center gap-6"><a href="#" class="text-ppg-muted text-xs hover:text-white transition-colors" data-i18n="footer.privacy">Privacy</a><a href="#" class="text-ppg-muted text-xs hover:text-white transition-colors" data-i18n="footer.terms">Terms</a></div>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
 </body>
 </html>

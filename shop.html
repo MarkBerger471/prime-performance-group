@@ -9,8 +9,9 @@
     <script>tailwind.config={theme:{extend:{colors:{ppg:{black:'#000000',dark:'#0a0a0a',card:'#111111',silver:'#C9C9C9',muted:'#8A8A8A',white:'#FFFFFF',accent:'#a78bfa'}}}}}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <script>if(localStorage.getItem("ppg-lang")==="th")document.documentElement.classList.add("lang-loading");</script>
 </head>
 <body class="noise">
 
@@ -20,20 +21,21 @@
             <div class="flex items-center justify-between h-20">
                 <a href="index.html" class="flex-shrink-0"><img src="assets/logo.png" alt="Prime Performance Group" class="h-10 w-auto"></a>
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="index.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Home</a>
-                    <a href="about.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">About</a>
-                    <a href="story.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Our Story</a>
-                    <a href="shop.html" class="nav-link-active text-sm font-medium tracking-wider uppercase">Shop</a>
-                    <a href="blog.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Blog</a>
-                    <a href="community.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Community</a>
-                    <a href="contact.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase">Contact</a>
+                    <a href="index.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase" data-i18n="nav.home">Home</a>
+                    <a href="about.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase" data-i18n="nav.about">About</a>
+                    <a href="story.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase" data-i18n="nav.story">Our Story</a>
+                    <a href="shop.html" class="nav-link-active text-sm font-medium tracking-wider uppercase" data-i18n="nav.shop">Shop</a>
+                    <a href="blog.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase" data-i18n="nav.blog">Blog</a>
+                    <a href="community.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase" data-i18n="nav.community">Community</a>
+                    <a href="contact.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wider uppercase" data-i18n="nav.contact">Contact</a>
                 </div>
                 <div class="hidden lg:flex items-center gap-4">
                     <button class="relative p-2 text-white/70 hover:text-white transition-colors">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
                         <span class="absolute -top-1 -right-1 w-4 h-4 bg-white text-black text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
                     </button>
-                    <a href="shop.html" class="btn-solid px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide">Shop Now</a>
+                    <a href="shop.html" class="btn-solid px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide" data-i18n="nav.shopNow">Shop Now</a>
+                    <button onclick="ppgI18n.toggleLang()" class="px-3 py-1.5 rounded-full text-xs font-semibold tracking-wider glass text-white/70 hover:text-white hover:bg-white/10 transition-all"><span class="lang-toggle-text">TH</span></button>
                 </div>
                 <button id="menu-toggle" class="lg:hidden p-2 text-white" aria-label="Menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -45,13 +47,14 @@
         </div>
         <div id="mobile-menu" class="mobile-menu fixed inset-0 top-20 bg-black/95 backdrop-blur-xl lg:hidden z-40">
             <div class="flex flex-col items-center justify-center h-full gap-8">
-                <a href="index.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link">Home</a>
-                <a href="about.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link">About</a>
-                <a href="story.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link">Our Story</a>
-                <a href="shop.html" class="text-2xl font-light tracking-widest uppercase text-white mobile-link">Shop</a>
-                <a href="blog.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link">Blog</a>
-                <a href="community.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link">Community</a>
-                <a href="contact.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link">Contact</a>
+                <a href="index.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link" data-i18n="nav.home">Home</a>
+                <a href="about.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link" data-i18n="nav.about">About</a>
+                <a href="story.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link" data-i18n="nav.story">Our Story</a>
+                <a href="shop.html" class="text-2xl font-light tracking-widest uppercase text-white mobile-link" data-i18n="nav.shop">Shop</a>
+                <a href="blog.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link" data-i18n="nav.blog">Blog</a>
+                <a href="community.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link" data-i18n="nav.community">Community</a>
+                <a href="contact.html" class="text-2xl font-light tracking-widest uppercase text-white/80 mobile-link" data-i18n="nav.contact">Contact</a>
+                <button onclick="ppgI18n.toggleLang()" class="px-6 py-2 rounded-full text-sm font-semibold tracking-widest glass text-white/70 hover:text-white hover:bg-white/10 transition-all mt-2"><span class="lang-toggle-text">TH</span></button>
             </div>
         </div>
     </nav>
@@ -62,11 +65,11 @@
         <div class="orb orb-1 bottom-0 -left-40 animate-float-slow"></div>
         <div class="absolute inset-0 grid-pattern opacity-30"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <p class="text-sm tracking-[0.3em] uppercase text-ppg-muted mb-4 font-medium animate-fade-in" style="animation-delay:0.2s;animation-fill-mode:both;">Shop</p>
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] animate-slide-up" style="animation-delay:0.4s;animation-fill-mode:both;">
+            <p class="text-sm tracking-[0.3em] uppercase text-ppg-muted mb-4 font-medium animate-fade-in" style="animation-delay:0.2s;animation-fill-mode:both;" data-i18n="shop.label">Shop</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] animate-slide-up" style="animation-delay:0.4s;animation-fill-mode:both;" data-i18n-html="shop.title">
                 Our <span class="text-shimmer">Products</span>
             </h1>
-            <p class="text-ppg-silver/70 text-lg max-w-2xl mx-auto mt-8 leading-relaxed animate-slide-up" style="animation-delay:0.6s;animation-fill-mode:both;">
+            <p class="text-ppg-silver/70 text-lg max-w-2xl mx-auto mt-8 leading-relaxed animate-slide-up" style="animation-delay:0.6s;animation-fill-mode:both;" data-i18n="shop.subtitle">
                 Every product transparently dosed, third-party tested, and designed for results. No proprietary blends.
             </p>
         </div>
@@ -79,20 +82,20 @@
             <!-- Filter + Sort Bar -->
             <div class="glass-strong rounded-2xl p-4 md:p-6 mb-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 reveal">
                 <div class="flex flex-wrap gap-2">
-                    <button class="px-5 py-2 rounded-full text-sm font-medium bg-white text-black transition-all" data-filter="all">All</button>
-                    <button class="px-5 py-2 rounded-full text-sm font-medium glass text-white/70 hover:text-white hover:bg-white/10 transition-all" data-filter="pre-workout">Pre-Workout</button>
-                    <button class="px-5 py-2 rounded-full text-sm font-medium glass text-white/70 hover:text-white hover:bg-white/10 transition-all" data-filter="protein">Protein</button>
-                    <button class="px-5 py-2 rounded-full text-sm font-medium glass text-white/70 hover:text-white hover:bg-white/10 transition-all" data-filter="recovery">Recovery</button>
-                    <button class="px-5 py-2 rounded-full text-sm font-medium glass text-white/70 hover:text-white hover:bg-white/10 transition-all" data-filter="wellness">Wellness</button>
-                    <button class="px-5 py-2 rounded-full text-sm font-medium glass text-white/70 hover:text-white hover:bg-white/10 transition-all" data-filter="stack">Stacks</button>
+                    <button class="px-5 py-2 rounded-full text-sm font-medium bg-white text-black transition-all" data-filter="all" data-i18n="shop.filterAll">All</button>
+                    <button class="px-5 py-2 rounded-full text-sm font-medium glass text-white/70 hover:text-white hover:bg-white/10 transition-all" data-filter="pre-workout" data-i18n="shop.filterPreWorkout">Pre-Workout</button>
+                    <button class="px-5 py-2 rounded-full text-sm font-medium glass text-white/70 hover:text-white hover:bg-white/10 transition-all" data-filter="protein" data-i18n="shop.filterProtein">Protein</button>
+                    <button class="px-5 py-2 rounded-full text-sm font-medium glass text-white/70 hover:text-white hover:bg-white/10 transition-all" data-filter="recovery" data-i18n="shop.filterRecovery">Recovery</button>
+                    <button class="px-5 py-2 rounded-full text-sm font-medium glass text-white/70 hover:text-white hover:bg-white/10 transition-all" data-filter="wellness" data-i18n="shop.filterWellness">Wellness</button>
+                    <button class="px-5 py-2 rounded-full text-sm font-medium glass text-white/70 hover:text-white hover:bg-white/10 transition-all" data-filter="stack" data-i18n="shop.filterStacks">Stacks</button>
                 </div>
                 <div class="flex items-center gap-2 text-sm text-ppg-muted">
-                    <span>Sort:</span>
+                    <span data-i18n="shop.sort">Sort:</span>
                     <select class="glass-input px-4 py-2 rounded-full text-xs text-white/70 appearance-none cursor-pointer pr-8">
-                        <option>Featured</option>
-                        <option>Price: Low to High</option>
-                        <option>Price: High to Low</option>
-                        <option>Newest</option>
+                        <option data-i18n="shop.sortFeatured">Featured</option>
+                        <option data-i18n="shop.sortPriceLow">Price: Low to High</option>
+                        <option data-i18n="shop.sortPriceHigh">Price: High to Low</option>
+                        <option data-i18n="shop.sortNewest">Newest</option>
                     </select>
                 </div>
             </div>
@@ -108,14 +111,14 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60">Pre-Workout</span>
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-green-500/10 text-green-400/80">In Stock</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60" data-i18n="product.preWorkout">Pre-Workout</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-green-500/10 text-green-400/80" data-i18n="product.inStock">In Stock</span>
                         </div>
-                        <h3 class="text-lg font-semibold mb-1">Prime Ignite</h3>
-                        <p class="text-ppg-muted text-sm mb-4">High-stim pre-workout with clinically dosed citrulline, beta-alanine & caffeine. 30 servings.</p>
+                        <h3 class="text-lg font-semibold mb-1" data-i18n="product.ignite.name">Prime Ignite</h3>
+                        <p class="text-ppg-muted text-sm mb-4" data-i18n="product.ignite.desc">High-stim pre-workout with clinically dosed citrulline, beta-alanine & caffeine. 30 servings.</p>
                         <div class="flex items-center justify-between">
                             <span class="text-xl font-bold">฿1,490</span>
-                            <button class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide">Add to Cart</button>
+                            <button class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide" data-i18n="product.addToCart">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -128,14 +131,14 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60">Protein</span>
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-green-500/10 text-green-400/80">In Stock</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60" data-i18n="product.protein">Protein</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-green-500/10 text-green-400/80" data-i18n="product.inStock">In Stock</span>
                         </div>
-                        <h3 class="text-lg font-semibold mb-1">Prime Whey Isolate</h3>
-                        <p class="text-ppg-muted text-sm mb-4">Ultra-pure whey isolate, 27g protein per scoop. Zero added sugar. Mixes instantly.</p>
+                        <h3 class="text-lg font-semibold mb-1" data-i18n="product.whey.name">Prime Whey Isolate</h3>
+                        <p class="text-ppg-muted text-sm mb-4" data-i18n="product.whey.desc">Ultra-pure whey isolate, 27g protein per scoop. Zero added sugar. Mixes instantly.</p>
                         <div class="flex items-center justify-between">
                             <span class="text-xl font-bold">฿1,890</span>
-                            <button class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide">Add to Cart</button>
+                            <button class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide" data-i18n="product.addToCart">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -148,14 +151,14 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60">Recovery</span>
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-green-500/10 text-green-400/80">In Stock</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60" data-i18n="product.recovery">Recovery</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-green-500/10 text-green-400/80" data-i18n="product.inStock">In Stock</span>
                         </div>
-                        <h3 class="text-lg font-semibold mb-1">Prime Recover</h3>
-                        <p class="text-ppg-muted text-sm mb-4">EAA + electrolyte recovery formula. Designed for Thailand's climate and intense training.</p>
+                        <h3 class="text-lg font-semibold mb-1" data-i18n="product.recover.name">Prime Recover</h3>
+                        <p class="text-ppg-muted text-sm mb-4" data-i18n="product.recover.desc">EAA + electrolyte recovery formula. Designed for Thailand's climate and intense training.</p>
                         <div class="flex items-center justify-between">
                             <span class="text-xl font-bold">฿1,290</span>
-                            <button class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide">Add to Cart</button>
+                            <button class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide" data-i18n="product.addToCart">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -168,14 +171,14 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60">Wellness</span>
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-green-500/10 text-green-400/80">In Stock</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60" data-i18n="product.wellness">Wellness</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-green-500/10 text-green-400/80" data-i18n="product.inStock">In Stock</span>
                         </div>
-                        <h3 class="text-lg font-semibold mb-1">Prime Omega-3</h3>
-                        <p class="text-ppg-muted text-sm mb-4">Pharmaceutical-grade fish oil. High EPA/DHA ratio for inflammation and joint health.</p>
+                        <h3 class="text-lg font-semibold mb-1" data-i18n="product.omega.name">Prime Omega-3</h3>
+                        <p class="text-ppg-muted text-sm mb-4" data-i18n="product.omega.desc">Pharmaceutical-grade fish oil. High EPA/DHA ratio for inflammation and joint health.</p>
                         <div class="flex items-center justify-between">
                             <span class="text-xl font-bold">฿990</span>
-                            <button class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide">Add to Cart</button>
+                            <button class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide" data-i18n="product.addToCart">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -188,14 +191,14 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60">Pre-Workout</span>
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-yellow-500/10 text-yellow-400/80">Low Stock</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60" data-i18n="product.preWorkout">Pre-Workout</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-yellow-500/10 text-yellow-400/80" data-i18n="product.lowStock">Low Stock</span>
                         </div>
-                        <h3 class="text-lg font-semibold mb-1">Prime Focus</h3>
-                        <p class="text-ppg-muted text-sm mb-4">Nootropic-enhanced stim-free pre. L-Tyrosine, Alpha-GPC & Huperzine-A for tunnel vision focus.</p>
+                        <h3 class="text-lg font-semibold mb-1" data-i18n="product.focus.name">Prime Focus</h3>
+                        <p class="text-ppg-muted text-sm mb-4" data-i18n="product.focus.desc">Nootropic-enhanced stim-free pre. L-Tyrosine, Alpha-GPC & Huperzine-A for tunnel vision focus.</p>
                         <div class="flex items-center justify-between">
                             <span class="text-xl font-bold">฿1,590</span>
-                            <button class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide">Add to Cart</button>
+                            <button class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide" data-i18n="product.addToCart">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -208,17 +211,17 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60">Stack</span>
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-purple-500/10 text-purple-400/80">Best Value</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60" data-i18n="product.stack">Stack</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-purple-500/10 text-purple-400/80" data-i18n="product.bestValue">Best Value</span>
                         </div>
-                        <h3 class="text-lg font-semibold mb-1">Prime Stack — Complete</h3>
-                        <p class="text-ppg-muted text-sm mb-4">Pre-workout + Whey Isolate + Recovery bundle. Save 15% vs. individual purchase.</p>
+                        <h3 class="text-lg font-semibold mb-1" data-i18n="product.stack.name">Prime Stack — Complete</h3>
+                        <p class="text-ppg-muted text-sm mb-4" data-i18n="product.stack.desc">Pre-workout + Whey Isolate + Recovery bundle. Save 15% vs. individual purchase.</p>
                         <div class="flex items-center justify-between">
                             <div>
                                 <span class="text-xs text-ppg-muted line-through mr-2">฿4,670</span>
                                 <span class="text-xl font-bold">฿3,970</span>
                             </div>
-                            <button class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide">Add to Cart</button>
+                            <button class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide" data-i18n="product.addToCart">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -231,14 +234,14 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60">Wellness</span>
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-green-500/10 text-green-400/80">In Stock</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60" data-i18n="product.wellness">Wellness</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-green-500/10 text-green-400/80" data-i18n="product.inStock">In Stock</span>
                         </div>
-                        <h3 class="text-lg font-semibold mb-1">Prime Vitamin D3+K2</h3>
-                        <p class="text-ppg-muted text-sm mb-4">High-potency vitamin D3 with K2 (MK-7) for immune support and calcium absorption.</p>
+                        <h3 class="text-lg font-semibold mb-1" data-i18n="product.vitamind.name">Prime Vitamin D3+K2</h3>
+                        <p class="text-ppg-muted text-sm mb-4" data-i18n="product.vitamind.desc">High-potency vitamin D3 with K2 (MK-7) for immune support and calcium absorption.</p>
                         <div class="flex items-center justify-between">
                             <span class="text-xl font-bold">฿690</span>
-                            <button class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide">Add to Cart</button>
+                            <button class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide" data-i18n="product.addToCart">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -251,14 +254,14 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60">Protein</span>
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-green-500/10 text-green-400/80">In Stock</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60" data-i18n="product.protein">Protein</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-green-500/10 text-green-400/80" data-i18n="product.inStock">In Stock</span>
                         </div>
-                        <h3 class="text-lg font-semibold mb-1">Prime Casein</h3>
-                        <p class="text-ppg-muted text-sm mb-4">Micellar casein for sustained protein release. Ideal for overnight recovery. 25g per scoop.</p>
+                        <h3 class="text-lg font-semibold mb-1" data-i18n="product.casein.name">Prime Casein</h3>
+                        <p class="text-ppg-muted text-sm mb-4" data-i18n="product.casein.desc">Micellar casein for sustained protein release. Ideal for overnight recovery. 25g per scoop.</p>
                         <div class="flex items-center justify-between">
                             <span class="text-xl font-bold">฿1,790</span>
-                            <button class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide">Add to Cart</button>
+                            <button class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide" data-i18n="product.addToCart">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -271,14 +274,14 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60">Recovery</span>
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-green-500/10 text-green-400/80">In Stock</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-white/10 text-white/60" data-i18n="product.recovery">Recovery</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase font-medium bg-green-500/10 text-green-400/80" data-i18n="product.inStock">In Stock</span>
                         </div>
-                        <h3 class="text-lg font-semibold mb-1">Prime Creatine Mono</h3>
-                        <p class="text-ppg-muted text-sm mb-4">Pure micronized creatine monohydrate. 5g per serving, 100 servings. No fillers.</p>
+                        <h3 class="text-lg font-semibold mb-1" data-i18n="product.creatine.name">Prime Creatine Mono</h3>
+                        <p class="text-ppg-muted text-sm mb-4" data-i18n="product.creatine.desc">Pure micronized creatine monohydrate. 5g per serving, 100 servings. No fillers.</p>
                         <div class="flex items-center justify-between">
                             <span class="text-xl font-bold">฿790</span>
-                            <button class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide">Add to Cart</button>
+                            <button class="btn-solid px-5 py-2 rounded-full text-xs font-semibold tracking-wide" data-i18n="product.addToCart">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -292,22 +295,22 @@
                         <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
                             <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg>
                         </div>
-                        <h4 class="font-semibold mb-1">Free Shipping</h4>
-                        <p class="text-ppg-muted text-sm">On orders over ฿2,000</p>
+                        <h4 class="font-semibold mb-1" data-i18n="shop.freeShipping">Free Shipping</h4>
+                        <p class="text-ppg-muted text-sm" data-i18n="shop.freeShippingDesc">On orders over ฿2,000</p>
                     </div>
                     <div class="flex flex-col items-center">
                         <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
                             <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                         </div>
-                        <h4 class="font-semibold mb-1">Next-Day Bangkok</h4>
-                        <p class="text-ppg-muted text-sm">Order before 2 PM</p>
+                        <h4 class="font-semibold mb-1" data-i18n="shop.nextDay">Next-Day Bangkok</h4>
+                        <p class="text-ppg-muted text-sm" data-i18n="shop.nextDayDesc">Order before 2 PM</p>
                     </div>
                     <div class="flex flex-col items-center">
                         <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
                             <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                         </div>
-                        <h4 class="font-semibold mb-1">30-Day Guarantee</h4>
-                        <p class="text-ppg-muted text-sm">Not satisfied? Full refund</p>
+                        <h4 class="font-semibold mb-1" data-i18n="shop.guarantee">30-Day Guarantee</h4>
+                        <p class="text-ppg-muted text-sm" data-i18n="shop.guaranteeDesc">Not satisfied? Full refund</p>
                     </div>
                 </div>
             </div>
@@ -320,16 +323,16 @@
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-16">
                 <div class="col-span-2 md:col-span-4 lg:col-span-1 mb-4 lg:mb-0">
                     <img src="assets/logo.png" alt="Prime Performance Group" class="h-8 w-auto mb-6 brightness-75">
-                    <p class="text-ppg-muted text-sm leading-relaxed max-w-xs">Premium, science-backed supplements crafted for the Thai market.</p>
+                    <p class="text-ppg-muted text-sm leading-relaxed max-w-xs" data-i18n="footer.tagline">Premium, science-backed supplements crafted for the Thai market.</p>
                 </div>
-                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4">Shop</h4><ul class="space-y-3"><li><a href="shop.html" class="text-sm text-white/50 hover:text-white transition-colors">All Products</a></li></ul></div>
-                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4">Company</h4><ul class="space-y-3"><li><a href="about.html" class="text-sm text-white/50 hover:text-white transition-colors">About</a></li><li><a href="story.html" class="text-sm text-white/50 hover:text-white transition-colors">Our Story</a></li><li><a href="blog.html" class="text-sm text-white/50 hover:text-white transition-colors">Blog</a></li><li><a href="contact.html" class="text-sm text-white/50 hover:text-white transition-colors">Contact</a></li></ul></div>
-                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4">Support</h4><ul class="space-y-3"><li><a href="contact.html" class="text-sm text-white/50 hover:text-white transition-colors">FAQ</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Privacy</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Terms</a></li></ul></div>
-                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4">Connect</h4><ul class="space-y-3"><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Instagram</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Facebook</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">TikTok</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">LINE</a></li></ul></div>
+                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4" data-i18n="footer.shopHead">Shop</h4><ul class="space-y-3"><li><a href="shop.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.allProducts">All Products</a></li></ul></div>
+                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4" data-i18n="footer.companyHead">Company</h4><ul class="space-y-3"><li><a href="about.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="nav.about">About</a></li><li><a href="story.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.ourStory">Our Story</a></li><li><a href="blog.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.blog">Blog</a></li><li><a href="contact.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.contact">Contact</a></li></ul></div>
+                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4" data-i18n="footer.supportHead">Support</h4><ul class="space-y-3"><li><a href="contact.html" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.faq">FAQ</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.privacy">Privacy</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors" data-i18n="footer.terms">Terms</a></li></ul></div>
+                <div><h4 class="text-xs font-semibold tracking-widest uppercase text-ppg-muted mb-4" data-i18n="footer.connectHead">Connect</h4><ul class="space-y-3"><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Instagram</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Facebook</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">TikTok</a></li><li><a href="#" class="text-sm text-white/50 hover:text-white transition-colors">LINE</a></li></ul></div>
             </div>
             <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-ppg-muted text-xs">&copy; 2026 Prime Performance Group. All rights reserved.</p>
-                <div class="flex items-center gap-6"><a href="#" class="text-ppg-muted text-xs hover:text-white transition-colors">Privacy</a><a href="#" class="text-ppg-muted text-xs hover:text-white transition-colors">Terms</a></div>
+                <p class="text-ppg-muted text-xs" data-i18n="footer.copyright">&copy; 2026 Prime Performance Group. All rights reserved.</p>
+                <div class="flex items-center gap-6"><a href="#" class="text-ppg-muted text-xs hover:text-white transition-colors" data-i18n="footer.privacy">Privacy</a><a href="#" class="text-ppg-muted text-xs hover:text-white transition-colors" data-i18n="footer.terms">Terms</a></div>
             </div>
         </div>
     </footer>
@@ -366,5 +369,6 @@
             });
         });
     </script>
+    <script src="js/i18n.js"></script>
 </body>
 </html>
